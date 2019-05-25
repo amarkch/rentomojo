@@ -28,10 +28,10 @@ class PostList extends React.Component {
         })
     }
     render() {
-        const { postList, userId } = this.state;
+        const { postList, userId, postLimitPerPage } = this.state;
         return (
             <div className="user-holder">
-                <h3> List of posts</h3>
+                <h3> List of posts by : User-{userId} </h3>
                  <div className="head-row">
                     <div className="cell-no">
                         No
@@ -61,19 +61,19 @@ class PostList extends React.Component {
                     })
                 }
                 <div className="pagination-holder">
-                    <div className="page" onClick={() => this.getPostList(10)}>
+                    <div className="page" onClick={() => this.getPostList(1*postLimitPerPage)}>
                         1
                     </div>
-                    <div className="page" onClick={() => this.getPostList(20)}>
+                    <div className="page" onClick={() => this.getPostList(2*postLimitPerPage)}>
                         2
                     </div>
-                    <div className="page" onClick={() => this.getPostList(30)}>
+                    <div className="page" onClick={() => this.getPostList(3*postLimitPerPage)}>
                         3
                     </div>
-                    <div className="page" onClick={() => this.getPostList(40)}>
+                    <div className="page" onClick={() => this.getPostList(4*postLimitPerPage)}>
                         4
                     </div>
-                    <div className="page" onClick={() => this.getPostList(50)}>
+                    <div className="page" onClick={() => this.getPostList(5*postLimitPerPage)}>
                         5
                     </div>
                 </div>
